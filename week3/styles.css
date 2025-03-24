@@ -1,0 +1,203 @@
+/* 공통 */
+body {
+    background-color: #fffff0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    color:rgb(26, 126, 207);
+}
+
+.dosis-font {
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* home */
+header {
+    position: relative;
+    top: 10px;
+    background-color: rgba(26, 126, 207, 0.6);
+    border-radius: 30px;
+    padding: 0px;
+    color: #fffff0;
+    text-align: center;
+}
+
+.home-nav {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 100%;
+    left: 5%;
+    gap: 50px;
+    z-index: 10;
+}
+
+.home-nav a {
+    text-decoration: none;
+    color: rgb(26, 126, 207);
+    font-size: 25px;
+    font-family: "Dosis", serif;
+}
+
+.home-nav a:hover {
+    font-weight: bold;
+    font-style: italic;
+}
+
+main {
+    color: rgb(26, 126, 207);
+    text-align: center;
+}
+
+.home .portfolio {
+    font-size: 90px;
+    position: relative;
+    top: 170px;
+}
+
+.home .name {
+    font-size: 35px;
+    position: relative;
+    top: 170px;
+}
+
+.home .week {
+    position: relative;
+    top: 100px;
+    right: -45%;
+    transform: rotate(90deg);
+    font-size: 18px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+}
+
+footer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* aboutme, contact nav */
+.common-nav {
+    position: relative;
+    display: flex;
+    top: 10px;
+    justify-content: space-around;
+    background-color: rgba(26, 126, 207, 0.6);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.common-nav a {
+    text-decoration: none;
+    color: #fffff0;
+    font-size: 23px;
+    font-family: "Dosis", sans-serif;
+}
+
+.common-nav a:hover {
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* aboutme */
+.aboutme {
+    display: flex;
+    justify-content: flex-start;
+    margin: 40px;
+    color: rgb(26, 126, 207);
+}
+
+.aboutme .left_column, .aboutme .right-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.aboutme img {
+    width: 300px;
+    border-radius: 30px;
+}
+
+.aboutme p {
+    font-size: 18px;
+}
+
+.aboutme .information {
+    margin-left: 15px;
+}
+
+.aboutme .education {
+    margin-left: 100px;
+    margin-bottom: 40px;
+}
+
+.aboutme .language {
+    margin-left: 100px;
+}
+
+.aboutme .language img {
+    width: auto;
+    height: 40px;
+    border-radius: 30px;
+    margin: 5px;
+}
+
+.aboutme .language p {
+    font-size: 18px;
+}
+
+/* contact */
+.contact h2 {
+    margin-top: 40px;
+}
+
+.contact .interest {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+}
+
+.contact .interest figure {
+    text-align: center;
+    margin: 20px;
+}
+
+.contact .interest img {
+    width: 120px;
+    object-fit: cover;
+}
+
+.contact .interest figcaption {
+    margin-top: 15px;
+    font-size: 19px;
+    color: rgb(26, 126, 207);
+}
+
+.contact .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    gap:10px;
+}
+
+.contact .info h2 {
+    margin-bottom: 10px;
+}
+
+.contact .info p {
+    font-size: 19px;
+    margin: 10px;
+    width: 300px;
+}
