@@ -45,11 +45,15 @@ function displayComChoice(result) {
 
 // 6. start 함수
 function start(myChoice) {
+    document.getElementsByClassName("my-score")[0].innerText = myScore;
+    document.getElementsByClassName("computer-score")[0].innerText = comScore;
+    
     let resultArray = getComChoice();
     let comChoice = resultArray[0];
     displayComChoice(resultArray);
     
-    displayResult(myChoice, comChoice);
+    let gameResult = displayResult(myChoice, comChoice);
+    updateScore(gameResult);
 }
 
 // 7. 게임 결과 표시 함수
