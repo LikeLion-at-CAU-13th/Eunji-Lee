@@ -57,7 +57,7 @@ function displayResult(myChoice, comChoice) {
     let gameResult;
 
     if (myChoice == comChoice) {
-        gameResult = "Tie";
+        gameResult = "Draw";
     } else if (
         (myChoice == "rock" && comChoice == "scissors") ||
         (myChoice == "scissors" && comChoice == "paper") ||
