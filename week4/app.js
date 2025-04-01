@@ -76,10 +76,10 @@ function displayResult(myChoice, comChoice) {
     return gameResult;
 }
 
+// 8. 점수판 표시 함수
 let myScore = 0;
 let comScore = 0;
 
-// 8. 점수판 표시 함수
 function updateScore(gameResult) {
     if (gameResult == "Win") {
         myScore++;
