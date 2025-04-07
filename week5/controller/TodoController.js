@@ -1,4 +1,5 @@
 import Todo from "../DOM/Todo.js"
+import CompleteController from "./CompleteController.js"
 
 class TodoController {
     constructor(todoText) {
@@ -26,25 +27,26 @@ class TodoController {
 
     delTodo() {
         const todoList = document.getElementById("to-do-list");
-        todoList.removeChild(this.newTodo.getRow()); //할 일 한 줄을 통째로 삭제
+        todoList.removeChild(this.newTodo.getRow());
     }
 
     doneTodo() {
-        this.innerText.classList.toggle('done-text'); //할 일 텍스트
-        this.comBtnNode.classList.toggle('done-btn'); //완료 버튼
-
-        // if (this.comBtnNode.innerText === '미완') {
-        //     this.comBtnNode.innerText = '완료';
-        // } else {
-        //     this.comBtnNode.innerText = '미완';
-        // }
-
         const img = this.comBtnNode.querySelector('img');
+        this.innerText.classList.toggle('done-text');
+        this.comBtnNode.classList.toggle('done-btn');
+        
         if (this.comBtnNode.classList.contains('done-btn')) {
-            img.src = 'assets/complete.png';
-        } else {
-            img.src = 'assets/done.png';
+            img.src = 'assets/return.png';
+
+            const completeList = document.getElementById("complete-list");
+            completeList.appendChild(this.newTodo.getRow());
         }
+        // else {
+        //     img.src = 'assets/complete.png';
+
+        //     const todoList = document.getElementById("to-do-list");
+        //     todoList.appendChild(this.newTodo.getRow());
+        // }
     }
 }
 
