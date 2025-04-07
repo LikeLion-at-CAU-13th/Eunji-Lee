@@ -1,5 +1,4 @@
 import Complete from "../DOM/Complete.js"
-import TodoController from "./TodoController.js"
 
 class CompleteController {
     constructor(completeText) {
@@ -27,18 +26,6 @@ class CompleteController {
         const completeList = document.getElementById("complete-list");
         completeList.removeChild(this.completeTodo.getRow());
     }
-
-    // delCompleteTodo() {
-    //     const completeList = document.getElementById("complete-list");
-    //     completeList.removeChild(this.completeTodo.getRow());
-    // }
-
-    // returnTodo() {
-    //     //this.delCompleteTodo();
-
-    //     const todoController = new TodoController(this.innerText.innerText);
-    //     todoController.addTodo();
-    // }
 }
 
 export default CompleteController;

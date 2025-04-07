@@ -1,5 +1,4 @@
 import Todo from "../DOM/Todo.js"
-import CompleteController from "./CompleteController.js"
 
 class TodoController {
     constructor(todoText) {
@@ -40,13 +39,12 @@ class TodoController {
 
             const completeList = document.getElementById("complete-list");
             completeList.appendChild(this.newTodo.getRow());
-        }
-        // else {
-        //     img.src = 'assets/complete.png';
+        } else {
+            img.src = 'assets/complete.png';
 
-        //     const todoList = document.getElementById("to-do-list");
-        //     todoList.appendChild(this.newTodo.getRow());
-        // }
+            const todoList = document.getElementById("to-do-list");
+            todoList.appendChild(this.newTodo.getRow());
+        }
     }
 }
 
