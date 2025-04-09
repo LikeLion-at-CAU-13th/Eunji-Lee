@@ -1,7 +1,9 @@
 import Todo from "../DOM/Todo.js"
+import CompleteController from "./CompleteController.js";
 
 class TodoController {
     constructor(todoText) {
+        //this.todoText = todoText;
         this.newTodo = new Todo(todoText);
 
         this.delBtnNode = this.newTodo.getDelBtn();
@@ -30,21 +32,10 @@ class TodoController {
     }
 
     doneTodo() {
-        const img = this.comBtnNode.querySelector('img');
-        this.innerText.classList.toggle('done-text');
-        this.comBtnNode.classList.toggle('done-btn');
-        
-        if (this.comBtnNode.classList.contains('done-btn')) {
-            img.src = 'assets/return.png';
+        this.delTodo();
 
-            const completeList = document.getElementById("complete-list");
-            completeList.appendChild(this.newTodo.getRow());
-        } else {
-            img.src = 'assets/complete.png';
-
-            const todoList = document.getElementById("to-do-list");
-            todoList.appendChild(this.newTodo.getRow());
-        }
+        const completeController = new CompleteController(this.todoText);
+        completeController.addCompleteTodo();
     }
 }
 
