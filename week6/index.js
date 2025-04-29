@@ -27,9 +27,11 @@ async function getData() {
       const image = document.createElement('img');
       image.src = data.galWebImageUrl;
 
+      const photoIndex = (count-15) * option.numofRows + (i+1);
+
       const info = document.createElement('span');
       info.innerText = `
-      🏷️ ${i+1}번째 사진
+      🏷️ ${photoIndex}번째 사진
       📸 제목 : ${data.galTitle}
       ⛳️ 장소 : ${data.galPhotographyLocation}`;
 
@@ -48,6 +50,7 @@ async function getData() {
           photographer: data.galPhotographer,
           keywords: data.galSearchKeyword,
           image: data.galWebImageUrl,
+          index: (i+1)+(count-15)*option.numofRows,
        });
 
        window.location.href = `detail.html?${params.toString()}`;
