@@ -11,7 +11,8 @@ const option = {
   };
 
 const container = document.getElementById("container");
-let count = 15;
+const startPage = Math.floor(Math.random() * 1000) + 1;
+let count = startPage;
 
 async function getData() {
    const url = `${baseURL}/galleryList1?numOfRows=${option.numofRows}&MobileApp=${option.MobileApp}&MobileOS=${option.MobileOS}&arrange=${option.arrange}&_type=${option._type}&pageNo=${count}&serviceKey=${option.serviceKey}`
@@ -27,7 +28,7 @@ async function getData() {
       const image = document.createElement('img');
       image.src = data.galWebImageUrl;
 
-      const photoIndex = (count-15) * option.numofRows + (i+1);
+      const photoIndex = (count-startPage) * option.numofRows + (i+1);
 
       const info = document.createElement('span');
       info.innerText = `
