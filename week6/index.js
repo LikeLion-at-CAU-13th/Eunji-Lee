@@ -11,10 +11,15 @@ const option = {
   };
 
 const container = document.getElementById("container");
+<<<<<<< HEAD
 const startPage = Math.floor(Math.random() * 1000) + 1;
 let count = startPage;
+=======
+let photoIndex = 1;
+>>>>>>> 2bf1ac2 (Feat: 사진 불러오기 방법 변경)
 
 async function getData() {
+   let count = Math.floor(Math.random() * 1000) + 1;
    const url = `${baseURL}/galleryList1?numOfRows=${option.numofRows}&MobileApp=${option.MobileApp}&MobileOS=${option.MobileOS}&arrange=${option.arrange}&_type=${option._type}&pageNo=${count}&serviceKey=${option.serviceKey}`
    
    const fetchData = await fetch(url);
@@ -28,11 +33,14 @@ async function getData() {
       const image = document.createElement('img');
       image.src = data.galWebImageUrl;
 
+<<<<<<< HEAD
       const photoIndex = (count-startPage) * option.numofRows + (i+1);
 
+=======
+>>>>>>> 2bf1ac2 (Feat: 사진 불러오기 방법 변경)
       const info = document.createElement('span');
       info.innerText = `
-      🏷️ ${photoIndex}번째 사진
+      🏷️ ${photoIndex++}번째 사진
       📸 제목 : ${data.galTitle}
       ⛳️ 장소 : ${data.galPhotographyLocation}`;
 
@@ -51,7 +59,6 @@ async function getData() {
           photographer: data.galPhotographer,
           keywords: data.galSearchKeyword,
           image: data.galWebImageUrl,
-          index: (i+1)+(count-15)*option.numofRows,
        });
 
        window.location.href = `detail.html?${params.toString()}`;
