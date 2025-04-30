@@ -11,12 +11,7 @@ const option = {
   };
 
 const container = document.getElementById("container");
-<<<<<<< HEAD
-const startPage = Math.floor(Math.random() * 1000) + 1;
-let count = startPage;
-=======
 let photoIndex = 1;
->>>>>>> 2bf1ac2 (Feat: 사진 불러오기 방법 변경)
 
 async function getData() {
    let count = Math.floor(Math.random() * 1000) + 1;
@@ -33,11 +28,6 @@ async function getData() {
       const image = document.createElement('img');
       image.src = data.galWebImageUrl;
 
-<<<<<<< HEAD
-      const photoIndex = (count-startPage) * option.numofRows + (i+1);
-
-=======
->>>>>>> 2bf1ac2 (Feat: 사진 불러오기 방법 변경)
       const info = document.createElement('span');
       info.innerText = `
       🏷️ ${photoIndex++}번째 사진
