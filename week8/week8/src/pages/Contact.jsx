@@ -1,7 +1,6 @@
 // src/pages/Contact.jsx
 import React from "react";
-import { Link } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import CommonNavbar from "../components/CommonNavbar";
 import styled from "styled-components";
 import XR from "../assets/xr.png";
 import CG from "../assets/cg.png"
@@ -11,11 +10,7 @@ import iOS from "../assets/iOS.png";
 const Contact = () => {
   return (
     <Container>
-        <CommonNav>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/aboutme">About Me</NavLink>
-        <NavLink to="/contact">Contact</NavLink>
-      </CommonNav>
+        <CommonNavbar />
       <Content>
         <h2>If anyone is interested in these parts, please contact me!</h2>
         <InterestSection>
@@ -38,10 +33,10 @@ const Contact = () => {
         </InterestSection>
         <ContactInfo>
           <h2>🩵 HOW TO CONTACT 🩵</h2>
-          <p>Phone: 010-6249-1743</p>
-          <p>Email: leg040311@gmail.com</p>
-          <p>Kakaotalk ID: iameunji_</p>
-          <p>Location: 310 Building 7th floor</p>
+          <p>| Phone number 📞 | 010-6249-1743</p>
+          <p>| Email 📧 | leg040311@gmail.com</p>
+          <p>| Kakaotalk ID 💬 | iameunji_</p>
+          <p>| Place 🏫 | 310 Building 7th floor</p>
         </ContactInfo>
       </Content>
     </Container>
@@ -52,29 +47,6 @@ export default Contact;
 
 const Container = styled.div`
   padding: 20px;
-`;
-
-const CommonNav = styled.nav`
-  position: relative;
-  display: flex;
-  top: 10px;
-  justify-content: space-around;
-  background-color: rgba(26, 126, 207, 0.6);
-  border-radius: 10px;
-  padding: 5px;
-  margin-bottom: 20px;
-`;
-
-const NavLink = styled(Link)`
-  text-decoration: none;
-  color: #fffff0;
-  font-size: 23px;
-  font-family: "Dosis", sans-serif;
-
-  &:hover {
-    font-weight: bold;
-    font-style: italic;
-  }
 `;
 
 const Content = styled.div`
@@ -123,6 +95,6 @@ const ContactInfo = styled.div`
   p {
     font-size: 19px;
     margin: 10px;
-    width: 300px;
+    width: 305px;
   }
 `;

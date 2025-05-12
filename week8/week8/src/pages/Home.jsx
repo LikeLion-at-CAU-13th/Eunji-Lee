@@ -1,20 +1,14 @@
 // src/pages/Home.jsx
 import React from "react";
-import { Link } from "react-router-dom";
+import HomeNavbar from "../components/HomeNavbar";
 import Header from "../components/Header";
-import Navbar from "../components/Navbar";
 import styled from "styled-components";
 
 const Home = () => {
   return (
     <Container>
       <Header />
-      <HomeNav>
-        <HomeNavLink href="/">Home</HomeNavLink>
-        <HomeNavLink href="/aboutme">About Me</HomeNavLink>
-        <HomeNavLink href="/contact">Contact</HomeNavLink>
-      </HomeNav>
-      <Navbar active="home" />
+      <HomeNavbar />
       <Main>
         <Portfolio>Portfolio</Portfolio>
         <Name>Lee-Eunji</Name>
@@ -39,52 +33,31 @@ const Container = styled.div`
   padding: 20px;
 `;
 
-const HomeNav = styled.nav`
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  top: 100px;
-  left: 5%;
-  gap: 50px;
-  z-index: 10;
-`;
-
-const HomeNavLink = styled(Link)`
-  text-decoration: none;
-  color: rgb(26, 126, 207);
-  font-size: 25px;
-  font-family: "Dosis", serif;
-
-  &:hover {
-    font-weight: bold;
-    font-style: italic;
-  }
-`;
-
 const Main = styled.main`
   color: rgb(26, 126, 207);
   text-align: center;
+  font-family: "Dosis", serif;
 `;
 
 const Portfolio = styled.div`
-  font-family: "Dosis", sans-serif;
   font-size: 90px;
   position: relative;
-  top: 170px;
+  top: 230px;
 `;
 
 const Name = styled.div`
   font-size: 35px;
   position: relative;
-  top: 170px;
+  top: 230px;
 `;
 
 const Week = styled.div`
-  font-size: 18px;
-  position: relative;
-  top: 100px;
-  right: -45%;
+  position: absolute;
+  top: 340px;
+  right: 10px;
   transform: rotate(90deg);
+  font-size: 18px;
+  font-weight: normal;
 `;
 
 const Footer = styled.footer`

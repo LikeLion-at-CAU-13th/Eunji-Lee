@@ -14,8 +14,9 @@ const Header = () => {
 export default Header;
 
 const HeaderContainer = styled.header`
-    position: relative;
-    top: 10px;
+    position: absolute;
+    width: 97%;
+    top: 20px;
     background-color: rgba(26, 126, 207, 0.6);
     border-radius: 30px;
     padding: 0px;
