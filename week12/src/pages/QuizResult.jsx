@@ -34,15 +34,6 @@ const QuizResult = () => {
     fetchResult();
   }, [userAnswers]);
 
-  if (error) {
-    return (
-      <Container>
-        <ErrorText>{error}</ErrorText>
-        <Button onClick={() => navigate('/')}>홈으로</Button>
-      </Container>
-    );
-  }
-
   if (score === null) return <Container>결과를 불러오는 중...</Container>;
 
   return (
