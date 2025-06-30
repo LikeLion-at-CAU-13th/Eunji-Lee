@@ -10,7 +10,6 @@ export const emailAtom = atom({
     default: "likelion@cau.ac.kr",
 });
 
-//1. recoil로 관리할 상태 데이터(atom) 하나 추가해보기
 export const birthAtom = atom({
     key: "birth",
     default: " ",
