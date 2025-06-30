@@ -1,4 +1,3 @@
-// src/pages/AboutMe.jsx
 import React from "react";
 import CommonNavbar from "../components/CommonNavbar";
 import styled from "styled-components";
