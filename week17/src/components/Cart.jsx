@@ -254,17 +254,13 @@ const TotalPrice = styled.h3`
 `;
 
 const AllCheckContainer = styled.div`
-  margin-bottom: 15px;
-  font-size: 0.95rem;
-  color: #333;
+  margin-bottom: 0px;
+  font-size: 15px;
+  color: #000000;
 
   label {
     display: flex;
     align-items: center;
     gap: 6px;
-  }
-
-  input[type="checkbox"] {
-    transform: scale(1.2);
   }
 `;

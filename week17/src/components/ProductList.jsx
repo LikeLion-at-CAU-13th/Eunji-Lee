@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import useCartStore from '../stores/cartStore';
+import useProductStore from '../stores/productStore';
 
 const products = [
     { name: '사탕', price: 2000 },
@@ -20,24 +21,35 @@ export const importImage = (name) => {
 
 const ProductList = () => {
     const addItem = useCartStore((state) => state.addItem);
+    const { sortOrder, setSortOrder } = useProductStore();
 
-      return (
-    <ProductListContainer>
-      <ProductGrid>
-        {products.map((product, index) => (
-          <ProductItem key={index}>
-            <ProductImage
-              src={importImage(product.name)}
-              alt={product.name}
-            />
-            <ProductName>{product.name}</ProductName>
-            <ProductPrice>{product.price.toLocaleString()}원</ProductPrice>
-            <AddButton onClick={() => addItem(product)}>카트에 추가</AddButton>
-          </ProductItem>
-        ))}
-      </ProductGrid>
-    </ProductListContainer>
-  );
+    const sortedProducts = [...products].sort((a, b) => {
+      if (sortOrder === 'low') return a.price - b.price;
+      if (sortOrder === 'high') return b.price - a.price;
+      return 0;
+    });
+    
+    return (
+      <ProductListContainer>
+        <ProductGrid>
+          <SortWrapper>
+            <select value={sortOrder || ''} onChange={(e) => setSortOrder(e.target.value)}>
+              <option value="">정렬</option>
+              <option value="low">낮은 가격순</option>
+              <option value="high">높은 가격순</option>
+            </select>
+          </SortWrapper>
+          {sortedProducts.map((product, index) => (
+            <ProductItem key={index}>
+              <ProductImage src={importImage(product.name)} alt={product.name} />
+              <ProductName>{product.name}</ProductName>
+              <ProductPrice>{product.price.toLocaleString()}원</ProductPrice>
+              <AddButton onClick={() => addItem(product)}>카트에 추가</AddButton>
+            </ProductItem>
+          ))}
+        </ProductGrid>
+      </ProductListContainer>
+    );
 }
 
 export default ProductList
@@ -129,5 +141,19 @@ const AddButton = styled.button`
 
   &:hover {
     background-color: #218838;
+  }
+`;
+
+const SortWrapper = styled.li`
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+
+  select {
+    padding: 5px 6px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    background-color: #ffffff;
+    cursor: pointer;
   }
 `;
