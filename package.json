@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "react-router-dom": "^7.6.3",
+    "recoil": "^0.7.7",
+    "styled-components": "^6.1.19"
+  },
+  "devDependencies": {
+    "vite-plugin-mock": "^3.0.2"
+  }
+}
