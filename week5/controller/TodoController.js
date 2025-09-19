@@ -3,7 +3,7 @@ import CompleteController from "./CompleteController.js";
 
 class TodoController {
     constructor(todoText) {
-        //this.todoText = todoText;
+        this.todoText = todoText;
         this.newTodo = new Todo(todoText);
 
         this.delBtnNode = this.newTodo.getDelBtn();

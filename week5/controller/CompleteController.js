@@ -3,7 +3,7 @@ import TodoController from "./TodoController.js";
 
 class CompleteController {
     constructor(completeText) {
-        //this.completeText = completeText;
+        this.completeText = completeText;
         this.completeTodo = new Complete(completeText);
 
         this.returnBtnNode = this.completeTodo.getReturnBtn();
