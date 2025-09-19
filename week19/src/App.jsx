@@ -8,7 +8,7 @@ const App = () => {
       <ProductList/>
       <Cart/>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
