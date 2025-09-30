@@ -16,7 +16,7 @@ const ChatPage = () => {
 
   const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
   const url =
-    "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key=" +
+    "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=" +
     API_KEY;
 
   async function generateContent(prompt) {
