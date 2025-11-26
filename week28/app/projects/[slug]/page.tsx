@@ -1,8 +1,6 @@
 import BackButton from "@/components/BackButton";
 import { projects } from "@/constant/projects";
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { FiArrowLeftCircle } from "react-icons/fi";
 
 interface PageProps {
   params: { slug: string };
